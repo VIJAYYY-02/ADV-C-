@@ -1,27 +1,42 @@
-
 #include <iostream>
 using namespace std;
 
-void merge(int a[], int b[], int n, int m, int c[]) {
-    int i = 0, j = 0, k = 0;
+void merge(int a[], int b[], int n, int m) {
+   
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    int c[n + m]; // Create a new array to hold the merged result
 
     while (i < n && j < m) {
         if (a[i] <= b[j]) {
-            c[k++] = a[i++];
+            c[k] = a[i];
+            i++;
+            k++;
         } else {
-            c[k++] = b[j++];
+            c[k] = b[j];
+            j++;
+            k++;
+
         }
+       
     }
 
     while (i < n) {
-        c[k++] = a[i++];
+        c[k] = a[i];
+        i++;
+        k++;
     }
 
     while (j < m) {
-        c[k++] = b[j++];
+        c[k] = b[j];
+        j++;
+        k++;
     }
-}
 
+    
+}
 int main() {
     int n, m;
     cout << "Enter the size of first array: ";
@@ -41,7 +56,7 @@ int main() {
     }
 
     int c[n + m];
-    merge(a, b, n, m, c);
+    merge(a, b, n, m);
 
     cout << "Merged array: ";
     for (int i = 0; i < n + m; i++) {
@@ -51,5 +66,4 @@ int main() {
 
     return 0;
 }
-
 
