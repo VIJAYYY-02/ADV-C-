@@ -72,11 +72,11 @@ int main() {
     vector<vector<int>> ans = s.levelOrder(root);
 
     for (auto level : ans) {
-        cout << "[ ";
+        
         for (int x : level) {
             cout << x << " ";
         }
-        cout << "] ";
+        cout<<endl;
     }
 
     return 0;
