@@ -86,7 +86,7 @@ int main() {
 
     Node* root = NULL;
 
-    vector<int> values = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> values = {1, 2, 3, 4, 5, 6, 7,8,9};
    for (int i = 0; i < values.size(); i++) {
         root = insertion(root, values[i]);
     }
